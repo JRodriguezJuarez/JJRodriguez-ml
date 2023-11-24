@@ -1,4 +1,56 @@
 
+form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: calc(100% - 20px); /* Tomar el ancho máximo restando el padding */
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"],
+button[type="reset"] {
+    width: calc(50% - 5px);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #0022AA;
+    color: #fff;
+}
+
+button[type="reset"] {
+    background-color: #E0E0E0;
+    color: #000;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+    filter: brightness(0.9);
+}
+
+
 *{
     margin: 0px;
     padding: 0px;    
@@ -11,10 +63,6 @@ body{
 
 }
 
-h3{
-    font-size: 24px;
-}
-
 p{
     font-size: 12px;
 }
@@ -22,7 +70,8 @@ p{
 div.top-header{
     display: flex;
     flex-wrap: wrap;
-    padding: 0%;
+    padding: 0;
+    height: 40%;
 }
 
 header div.top-header p{
@@ -41,7 +90,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto;
+    width: 100%;
 }
 
 nav{
@@ -59,12 +108,12 @@ nav{
     padding: 10px;
 }
 .top-header p {
-    margin-bottom: 10px; /* Añade espacio entre el párrafo y el formulario */
+    margin-bottom: 20px; /* Añade espacio entre el párrafo y el formulario */
 }
 
 header div.logo,
 header .form{
-    width: 40%;
+    width: 50%;
 }
 
 header div.logo{
@@ -116,189 +165,9 @@ header .form .submit{
     border: 1px solid #000;
     color: #666;
     width: 10%;
+   
 }
 
-div.burger-menu{
-    text-align: center;
-}
-
-div.burger-menu i{
-    background-color: #0044AA;
-    border-radius: 5px;
-    color: #FFF;
-    font-size: 20px;
-    height: 40px;
-    margin: 10px 0px 20px 0px;
-    padding: 10px;
-    width: 40px;
-}
-
-div.last-visit,
-div.offers{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.price{
-    font-size: 18px;
-    width: 30%;
-}
-
-.discount{
-    width: 70%;
-}
-
-.discount,
-.description{
-    font-size: 16px;
-    font-weight: normal;
-}
-
-h3,
-.description{
-    color: #666;
-}
-
-.description{
-    display: none;
-    margin-top: 20px;
-}
-
-section.banner img{
-    width: 100%;
-}
-
-main{
-    width: 90%;
-    margin: 0 auto;
-}
-
-main section article{
-    background-color: #fff;    
-    margin: 10px 0px;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);    
-}
-
-main section article img{
-    width: 100%;
-}
-
-main section article i,
-.discount{
-    color: #39b54a;
-}
-
-main section article i{
-    display: block;
-    font-size: 16px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #39b54a;
-    background-color: #FFF;
-    border-radius: 50%;
-    position: absolute;
-    right: 20px;
-    top: -15px;
-}
-
-main section h3{
-    margin: 20px 0px;
-}
-
-article div.main-article{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    border-top: 1px solid #ebebeb;
-    position: relative;
-    padding: 15px;
-}
-
-@media (min-width: 361px){
-    main section article .description{
-        display: block;
-    }
-
-    main section article{
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-
-    main section div.products{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    
-    main section div.products article{
-        width: 45%;
-    }
-
-    .price,
-    .discount{
-        width: 50%;
-    }
-}
-
-@media (min-width: 769px){
-    main section div.products article{
-        width: 22%;
-    }
-}
-
-
-.main-article .description {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    position: absolute;
-    bottom: -30px; /* Mover la descripción más abajo */
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    box-sizing: border-box;
-    transform: translateY(100%);
-}
-.main-article:hover .description {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.article {
-    width: 90%;
-    margin: 0 auto 10px auto;
-    border-top: 1px solid #ebebeb;
-    padding: 15px;
-    transition: box-shadow 0.3s ease;
-}
-article .main-article {
-    padding: 15px;
-    border-top: 1px solid #ebebeb; /* Borde superior en la caja interna */
-    margin-top: 15px; /* Separación entre caja interna y artículo */
-  }
-
-.article:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.main-article .fas.fa-truck {
-    transition: transform 0.3s ease;
-}
-.main-article:hover .fas.fa-truck {
-    transform: rotate(-90deg);
-}
-main {
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  main section article {
-    background-color: #fff;
-    margin: 10px 0px;
-  }
-  
   .main-article .description {
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -307,25 +176,14 @@ main {
     left: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
     transform: translateY(100%);
   }
   
-  .main-article:hover .description {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  
   
 
-.submit-btn:hover {
-    background-color: #0022AA;
-}
-button[type="submit"]:hover {
-    background-color: #0022AA; /* Cambia el color de fondo al pasar el mouse */
-    color: #fff; /* Cambia el color del texto para asegurar su visibilidad */
-    transition: background-color 0.3s ease; /* Agrega una transición suave */
-}
 
 .footer {
     display: flex; /* Usa Flexbox para organizar los íconos uno al lado del otro */
@@ -362,18 +220,9 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
 }
-form {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-}
 
-label {
-    display: block;
-    margin-bottom: 6px;
-}
+
+
 
 input[type="text"],
 input[type="password"] {
